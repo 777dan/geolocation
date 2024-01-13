@@ -13,8 +13,6 @@ cityInput.addEventListener('change', function () {
         for (let i = 0; i < cities.length; i++) {
             if (cities[i][0] === city.trim()) {
                 findLocation(cities[i][1], cities[i][2]);
-                // console.log(cities[i][1]);
-                // console.log(cities[i][2]);
             }
         }
     } else {
@@ -73,7 +71,8 @@ function findLocation(latitude, longitude) {
         function deg2rad(deg) {
             return deg * (Math.PI / 180)
         }
-        console.log(getDistanceFromLatLonInKm(latitude1, longitude1, latitude2, longitude2));
+        distanceDiv = document.querySelector('#distance');
+        distanceDiv.textContent += `${getDistanceFromLatLonInKm(latitude1, longitude1, latitude2, longitude2).toFixed(3)} km`;
     }
 
     function error() {
