@@ -82,7 +82,3 @@ function findLocation(latitude, longitude) {
     status.innerHTML = "Searching...";
     navigator.geolocation.getCurrentPosition(success, error);
 }
-
-document.querySelector("#find").addEventListener("click", () => {
-    findLocation(latitude, longitude);
-});
